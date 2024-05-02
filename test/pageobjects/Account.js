@@ -31,16 +31,17 @@ class SignIn extends BaseUrl {
         await this.topLogOut.click();
     }
 
-    /*async logInLogOut(){
+    async logInLogOut(){
         for (let i = 0; i < Creds.fasleUsers.length; i++) {  
-        await this.signInTask(Creds.allUsers[i],Creds.falsePassword);
-            if (Creds.allUsers[i] === 'locked_out_user') {
+        await this.signInTask(Creds.fasleUsers[i],Creds.falsePassword);
+            if (Creds.fasleUsers[i] === 'locked_out_user') {
             await expect(this.loginError).toExist();
             break;   
             }
         await Logout.logOutTask();
-        }*/
+        }
 
+    }
 }
 
 export default new SignIn();
