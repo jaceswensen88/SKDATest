@@ -5,6 +5,6 @@ describe('SkdaTest', () => {
         await SignIn.open();
         await SignIn.positiveTest();
         await SignIn.negitiveTest();
-        await SignIn.boundiresTest();
+        await SignIn.boundariesTest();
     });
 })
