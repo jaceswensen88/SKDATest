@@ -55,7 +55,7 @@ class SignIn extends BaseUrl {
             } 
     }
 
-    async boundiresTest(){
+    async boundariesTest(){
         await this.topSignInBtn.click();
         await this.emailField.setValue(Creds.emailBound);
         await this.passWordField.setValue(Creds.turePassWord);
