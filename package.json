@@ -1,5 +1,5 @@
 {
-  "name": "SKDATEST",
+  "name": "defaultTest",
   "type": "module",
   "devDependencies": {
     "@wdio/cli": "^8.35.1",
