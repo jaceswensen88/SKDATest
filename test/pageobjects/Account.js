@@ -38,7 +38,7 @@ class SignIn extends BaseUrl {
         await this.signInBtn.click();
     }
 
-    async positiveTest(){
+    async positiveTask(){
         await this.topSignInBtn.click();
         await this.emailField.setValue(Creds.trueEmail);
         await this.passWordField.setValue(Creds.turePassWord);
@@ -46,7 +46,7 @@ class SignIn extends BaseUrl {
         await this.topLogOut.click();
     }
 
-    async negitiveTest(){
+    async negitiveTask(){
         for (let i = 0; i < Creds.fasleEmail.length; i++) {  
             await this.signInTask(Creds.fasleEmail[i],Creds.falsePassword);
                 if (Creds.fasleEmail[i] === 'shadow.ninja@example.com', 'unicorn.dreamer@example.com', 'galactic.pancake@example.com', 'cyber.dragon@example.com') {
@@ -55,7 +55,7 @@ class SignIn extends BaseUrl {
             } 
     }
 
-    async boundariesTest(){
+    async boundariesTask(){
         await this.topSignInBtn.click();
         await this.emailField.setValue(Creds.emailBound);
         await this.passWordField.setValue(Creds.turePassWord);
