@@ -38,4 +38,5 @@ class Bar {
         await expect(this.quickMessage).toHaveTextContaining("\ product results for \'!@#$%^&amp;*()\'");
     }
 }
+
 export default new Bar();
