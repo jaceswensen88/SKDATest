@@ -6,7 +6,7 @@ class Bar {
     }
 
     get searchFeild(){
-        return $('[id="search_query"]');
+        return $('(//input[@id="search_query"])[1]');
     }
 
     get cardTiltle(){
@@ -18,7 +18,7 @@ class Bar {
     }
 
     get quickMessage(){
-        return $('[class="quickSearchMessage"]')
+        return $('[class="quickSearchMessage"]');
     }
 
     async positiveTask(){
@@ -27,7 +27,7 @@ class Bar {
         await expect(this.cardTiltle).toHaveTextContaining('VOLT DUSK KTM Full Graphics Kit');
     }
 
-    async boundarysTask(){
+    async boundariesTask(){
         await this.clearResults.click();
         await this.searchFeild.setValue(Creds.emailBound);
     }
