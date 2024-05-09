@@ -48,7 +48,7 @@ class CartBtn {
     }
 
     get topCartBtn(){
-        return $('[class="navUser-item-cartLabel"]')
+        return $('[class="navUser-item-cartLabel"]');
     }
 
     get checkOutBtn(){
@@ -68,11 +68,11 @@ class CartBtn {
     }
 
     get quantity(){
-        return $('[id="qty[]"]')
+        return $('[id="qty[]"]');
     }
 
     get closeCart(){
-        return $('class="custom-button btn-checkout"');
+        return $('(//button[@class="custom-button btn-checkout"])[2]');
     }
 
     async seatCoverSetUp(){
@@ -95,12 +95,9 @@ class CartBtn {
         await this.topCartBtn.click();
         await expect(this.emptyCart).toBeExisting()
         await this.closeCart.click();
-
-        //add a close out button
     }
 
     async boundariesTask(){
-        await browser.pause(3000)
         await Bar.topSearchBtn.click();
         await Bar.searchFeild.setValue(Creds.hondaSeat);
         await this.hondaSeatCover.click();
@@ -125,4 +122,5 @@ class CartBtn {
     }
 
 }
+
 export default new CartBtn();

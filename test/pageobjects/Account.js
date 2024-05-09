@@ -1,5 +1,5 @@
-import BaseUrl from './Website.js'
-import Creds from './Credential.js'
+import BaseUrl from './Website.js';
+import Creds from './Credential.js';
 
 class SignIn extends BaseUrl {
 
@@ -28,7 +28,7 @@ class SignIn extends BaseUrl {
     }
 
     get inLineMessage(){
-        return $('[class="form-inlineMessage"]')
+        return $('[class="form-inlineMessage"]');
     }
 
     async signInTask (email, password) {
