@@ -3,6 +3,10 @@ import Creds from './Credential.js'
 
 class SubmitBtn {
 
+    reviewNiceMessage = 'good product';
+    trueIteam = 'VOLT DUSK KTM Full Graphics Kit';
+    emailBound = 'ldjfasdfoerijaenfacv;ldkfjas;ldkjfad;asjdfoweiyrtoqiuerlkjvnvnsldfjwoierqupoiafsdl;kfjpoiareuwrkjnvz,xvnmzlkjweriopqwuernzmx,vnzoqweiurpoasdlfkjzoqwiuerlkjfznmx,vwoierupqoiweurpoqwieurpoqwieurzxn,vzomwpeoirpqowieurpqowieurpoqiwuerzomwepoiruqowieurpqowieurpqowieurzomwepoirupqowieurpqwoieurpqowieurzoqwieurpoqiweurzoqwieurpqowieuqpwoieurpqwoieurzomwpoeirpqwoieurpqwoieurpqowieurpoqwieurpqowieurpoqwiuepriqwoieurpoqiweurpqoiweurpqwoieurpqwoieurpoqwieurpqowieurpqowieurpqowieurpqowieurpqowieurpoqiweurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowi'
+
     get ktmGraphics(){
         return $('(//a[@href="https://us.skda.com.au/volt-dusk-ktm-full-graphics-kit/"])[2]');
     }
@@ -49,7 +53,7 @@ class SubmitBtn {
 
 
     async itemSearch(){
-        await Bar.searchFeild.setValue(Creds.trueIteam);
+        await Bar.searchFeild.setValue(this.trueIteam);
         await expect(Bar.cardTiltle).toHaveTextContaining('VOLT DUSK KTM Full Graphics Kit'); 
         await this.ktmGraphics.click();
         await this.addReveiwBtn.click();
@@ -60,7 +64,7 @@ class SubmitBtn {
         await this.itemSearch();
         await this.addReveiwBtn.click();
         await this.starsRate.click();
-        await this.reviewMessage.setValue(Creds.reviewNiceMessage);
+        await this.reviewMessage.setValue(this.reviewNiceMessage);
         await this.reviewName.setValue(Creds.reviewName);
         await this.reviewEmail.setValue(Creds.trueEmail);
         await this.reviewSubmitBtn.click();
@@ -82,9 +86,9 @@ class SubmitBtn {
         await this.itemSearch();
         await this.addReveiwBtn.click();
         await this.starsRate.click();
-        await this.reviewMessage.setValue(Creds.emailBound);
-        await this.reviewName.setValue(Creds.emailBound);
-        await this.reviewEmail.setValue(Creds.emailBound);
+        await this.reviewMessage.setValue(this.emailBound);
+        await this.reviewName.setValue(this.emailBound);
+        await this.reviewEmail.setValue(this.emailBound);
         await this.reviewSubmitBtn.click();
     }
     

@@ -3,6 +3,10 @@ import Creds from './Credential.js';
 
 class SignIn extends BaseUrl {
 
+    fasleEmail = ['shadow.ninja@example.com', 'unicorn.dreamer@example.com', 'galactic.pancake@example.com', 'cyber.dragon@example.com'];
+    falsePassword = '123456';
+    emailBound = 'ldjfasdfoerijaenfacv;ldkfjas;ldkjfad;asjdfoweiyrtoqiuerlkjvnvnsldfjwoierqupoiafsdl;kfjpoiareuwrkjnvz,xvnmzlkjweriopqwuernzmx,vnzoqweiurpoasdlfkjzoqwiuerlkjfznmx,vwoierupqoiweurpoqwieurpoqwieurzxn,vzomwpeoirpqowieurpqowieurpoqiwuerzomwepoiruqowieurpqowieurpqowieurzomwepoirupqowieurpqwoieurpqowieurzoqwieurpoqiweurzoqwieurpqowieuqpwoieurpqwoieurzomwpoeirpqwoieurpqwoieurpqowieurpoqwieurpqowieurpoqwiuepriqwoieurpoqiweurpqoiweurpqwoieurpqwoieurpoqwieurpqowieurpqowieurpqowieurpqowieurpqowieurpoqiweurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowi'
+
     get topSignInBtn(){
         return $('[href="/login.php"]');
     }
@@ -47,9 +51,9 @@ class SignIn extends BaseUrl {
     }
 
     async negitiveTask(){
-        for (let i = 0; i < Creds.fasleEmail.length; i++) {  
-            await this.signInTask(Creds.fasleEmail[i],Creds.falsePassword);
-                if (Creds.fasleEmail[i] === 'shadow.ninja@example.com', 'unicorn.dreamer@example.com', 'galactic.pancake@example.com', 'cyber.dragon@example.com') {
+        for (let i = 0; i < this.fasleEmail.length; i++) {  
+            await this.signInTask(this.fasleEmail[i],this.falsePassword);
+                if (this.fasleEmail[i] === 'shadow.ninja@example.com', 'unicorn.dreamer@example.com', 'galactic.pancake@example.com', 'cyber.dragon@example.com') {
                 await expect(this.signInError).toExist();  
                 }
             } 
@@ -57,7 +61,7 @@ class SignIn extends BaseUrl {
 
     async boundariesTask(){
         await this.topSignInBtn.click();
-        await this.emailField.setValue(Creds.emailBound);
+        await this.emailField.setValue(this.emailBound);
         await this.passWordField.setValue(Creds.turePassWord);
         await this.signInBtn.click();
         await expect(this.inLineMessage).toExist();

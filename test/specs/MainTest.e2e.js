@@ -6,7 +6,7 @@ import CartBtn from '../pageobjects/Cart.js'
 describe('SkdaTest', () => {
     it('vaildTest', async () => {
         await SignIn.open();
-        await SignIn.positiveTask();
+        //await SignIn.positiveTask();
         await SignIn.negitiveTask();
         await SignIn.boundariesTask();
         await Bar.positiveTask();

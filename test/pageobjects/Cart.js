@@ -1,7 +1,9 @@
 import Bar from './Search.js'
-import Creds from './Credential.js'
 
 class CartBtn {
+
+    hondaSeat = 'Honda Rippled Seat Cover - CUSTOM COLORS';
+    bikeYear = '1999';
 
     get hondaSeatCover(){
         return $('(//a[@href="https://us.skda.com.au/honda-rippled-seat-cover-custom-colors/"])[2]');
@@ -11,7 +13,7 @@ class CartBtn {
         return $('[class="cart-item-name"]');
     }
 
-    get bikeYear(){
+    get selectBikeYear(){
         return $('[id="attribute_text_1768"]');
     }
 
@@ -77,9 +79,9 @@ class CartBtn {
 
     async seatCoverSetUp(){
         await Bar.topSearchBtn.click();
-        await Bar.searchFeild.setValue(Creds.hondaSeat);
+        await Bar.searchFeild.setValue(this.hondaSeat);
         await this.hondaSeatCover.click();
-        await this.bikeYear.setValue(Creds.bikeYear);
+        await this.selectBikeYear.setValue(this.bikeYear);
         await this.topColor.click();
         await this.topColorBlack.click();
         await this.sideColor.click();
@@ -99,16 +101,16 @@ class CartBtn {
 
     async boundariesTask(){
         await Bar.topSearchBtn.click();
-        await Bar.searchFeild.setValue(Creds.hondaSeat);
+        await Bar.searchFeild.setValue(this.hondaSeat);
         await this.hondaSeatCover.click();
-        await this.bikeYear.setValue(Creds.bikeYear);
+        await this.selectBikeYear.setValue(this.bikeYear);
         await this.topColor.click();
         await this.topColorBlack.click();
         await this.sideColor.click();
         await this.sideColorBlack.click();
         await this.ripplesColor.click();
         await this.ripplesColorBlack.click();
-        await this.quantity.setValue(Creds.bikeYear);
+        await this.quantity.setValue(this.bikeYear);
         await this.addToCart.click();
         await this.viewCart.click();
         await expect(this.cartHondaSeatCover).toHaveTextContaining('Honda Rippled Seat Cover - CUSTOM COLORS');

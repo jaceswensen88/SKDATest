@@ -1,6 +1,9 @@
-import Creds from "./Credential.js";
-
 class Bar {
+
+    trueIteam = 'VOLT DUSK KTM Full Graphics Kit';
+    emailBound = 'ldjfasdfoerijaenfacv;ldkfjas;ldkjfad;asjdfoweiyrtoqiuerlkjvnvnsldfjwoierqupoiafsdl;kfjpoiareuwrkjnvz,xvnmzlkjweriopqwuernzmx,vnzoqweiurpoasdlfkjzoqwiuerlkjfznmx,vwoierupqoiweurpoqwieurpoqwieurzxn,vzomwpeoirpqowieurpqowieurpoqiwuerzomwepoiruqowieurpqowieurpqowieurzomwepoirupqowieurpqwoieurpqowieurzoqwieurpoqiweurzoqwieurpqowieuqpwoieurpqwoieurzomwpoeirpqwoieurpqwoieurpqowieurpoqwieurpqowieurpoqwiuepriqwoieurpoqiweurpqoiweurpqwoieurpqwoieurpoqwieurpqowieurpqowieurpqowieurpqowieurpqowieurpoqiweurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowieurpqowi'
+    negativeSearch = '!@#$%^&*()';
+
     get topSearchBtn(){
         return $('[class="navUser-action navUser-action--quickSearch"]');
     }
@@ -23,18 +26,18 @@ class Bar {
 
     async positiveTask(){
         await this.topSearchBtn.click();
-        await this.searchFeild.setValue(Creds.trueIteam);
+        await this.searchFeild.setValue(this.trueIteam);
         await expect(this.cardTiltle).toHaveTextContaining('VOLT DUSK KTM Full Graphics Kit');
     }
 
     async boundariesTask(){
         await this.clearResults.click();
-        await this.searchFeild.setValue(Creds.emailBound);
+        await this.searchFeild.setValue(this.emailBound);
     }
     
     async negativeTask(){
         await this.clearResults.click();
-        await this.searchFeild.setValue(Creds.negativeSearch);
+        await this.searchFeild.setValue(this.negativeSearch);
         await expect(this.quickMessage).toHaveTextContaining("\ product results for \'!@#$%^&amp;*()\'");
     }
 }
